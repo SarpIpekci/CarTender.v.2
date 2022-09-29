@@ -1,0 +1,89 @@
+﻿@using CarTender.Models.DTO
+@model AddSignUpDTO
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="~/mystyle/signupstyle.css" rel="stylesheet" />
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form asp-action="AddUser" asp-controller="SignUp" method="post">
+        <div class="v6_01">
+            <div class="v6_02">
+            </div>
+            <div class="v6_03">
+                <div class="v6_04">
+                    <div>
+                        <span class="v6_05">Kullanıcı Oluştur</span>
+                    </div>
+                    <div>
+                        <span class="v6_06">İkinci el araç ihale sistemine kayıt olun.</span>
+                    </div>
+                    <div>
+                        <input type="text" class="v6_07" asp-for="UserName" placeholder="Kullanıcı Adı" />
+                    </div>
+                    <div>
+                        <input type="text" class="v6_08" asp-for="FirstAndLastName" placeholder="Ad Soyad" />
+                    </div>
+                    <div>
+                        <input type="text" class="v6_09" asp-for="Phone" placeholder="Telefon" />
+                    </div>
+                    <div>
+                        <input type="email" class="v6_10" asp-for="Email" placeholder="Email" />
+                    </div>
+                    <div>
+                        <input type="password" class="v6_11" asp-for="Password" placeholder="Şifre" />
+                        <a type="button" class="v5" onclick="myFunction();">
+                            <i class="fa fa-eye-slash"
+                               aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <input type="password" class="v6_12" placeholder="Şifreyi Doğrula" />
+                        <a type="button" class="v6" onclick="myFunction();">
+                            <i class="fa fa-eye-slash"
+                               aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <select aria-placeholder="Müşteri Tipi" class="v6_13">
+                            <option value="Bireysel">Bireysel Müşteri</option>
+                            <option value="Kurumsal">Kurumsal Müşteri</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input class="v6_14" type="submit" value="Kayıt Ol" />
+                        <a href="Deneme.html" class="v6_16">Geri Dön</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="~/images/signupcar.png" class="v6_15" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
