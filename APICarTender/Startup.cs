@@ -1,6 +1,9 @@
+using APIApplication.Abstract;
+using APIApplication.Concrete;
 using APIDataAccess;
-using APIMailSender.Abstract;
-using APIMailSender.Concrete;
+using APIMapping;
+using APIRabbitMq;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -27,11 +30,15 @@ namespace APICarTender
             services.AddControllers();
             services.AddDbContext<CarTenderDataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DataConnection")));
 
-            services.AddTransient<IDbProcessor, DbProcessor>();
-            services.AddTransient<IMailProcessor, MailProcessor>();
-            services.AddTransient<IMailSender, MailSender>();
-            services.AddTransient<IMailValidator, MailValidator>();
-            services.AddTransient<ISmtpSettings, SmtpSettings>();
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            }); 
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+                       
+            services.AddTransient<IQueueService, QueueService>();
+            services.AddTransient<ISignUpService, SignUpService>();
 
             services.AddSwaggerGen(c =>
             {

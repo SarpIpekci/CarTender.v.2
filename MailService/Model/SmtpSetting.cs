@@ -1,6 +1,12 @@
-﻿namespace APIMailSender.Model
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MailService.Model
 {
-    public class SmtpSetting
+    internal class SmtpSetting
     {
         public string Host { get; set; }
         public int Port { get; set; }

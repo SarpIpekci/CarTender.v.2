@@ -1,5 +1,5 @@
 ﻿using APIMailSender.Abstract;
-using APIMailSender.Model;
+using MailService.Model;
 using System.Net;
 using System.Net.Mail;
 

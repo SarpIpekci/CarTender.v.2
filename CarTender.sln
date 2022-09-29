@@ -17,7 +17,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIApplication", "APIApplic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIMailSender", "APIMailSender\APIMailSender.csproj", "{FE3B3040-EEBD-485B-AA04-1B464B9581E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTender", "CarTender\CarTender.csproj", "{99D01F69-25BB-4555-9C79-964AEACCE175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTender", "CarTender\CarTender.csproj", "{99D01F69-25BB-4555-9C79-964AEACCE175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIMapping", "APIMapping\APIMapping.csproj", "{B31A737F-A662-476D-B1BA-36856BF88126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIRabbitMq", "APIRabbitMq\APIRabbitMq.csproj", "{3D983675-8938-40DA-BC82-CC3D467E6BC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailSender", "..\MailSender-With-RabbitMQ\MailServer\MailSender\MailSender.csproj", "{84903D6F-0766-45BF-AD68-1EEF97D7FC05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailServerProject", "..\MailSender-With-RabbitMQ\MailServer\MailServerProject\MailServerProject.csproj", "{7AEBE297-CA9E-4CF4-936F-28522A114422}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +65,22 @@ Global
 		{99D01F69-25BB-4555-9C79-964AEACCE175}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99D01F69-25BB-4555-9C79-964AEACCE175}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99D01F69-25BB-4555-9C79-964AEACCE175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31A737F-A662-476D-B1BA-36856BF88126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31A737F-A662-476D-B1BA-36856BF88126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31A737F-A662-476D-B1BA-36856BF88126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31A737F-A662-476D-B1BA-36856BF88126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D983675-8938-40DA-BC82-CC3D467E6BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D983675-8938-40DA-BC82-CC3D467E6BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D983675-8938-40DA-BC82-CC3D467E6BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D983675-8938-40DA-BC82-CC3D467E6BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84903D6F-0766-45BF-AD68-1EEF97D7FC05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84903D6F-0766-45BF-AD68-1EEF97D7FC05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84903D6F-0766-45BF-AD68-1EEF97D7FC05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84903D6F-0766-45BF-AD68-1EEF97D7FC05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AEBE297-CA9E-4CF4-936F-28522A114422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AEBE297-CA9E-4CF4-936F-28522A114422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AEBE297-CA9E-4CF4-936F-28522A114422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AEBE297-CA9E-4CF4-936F-28522A114422}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using APIMailSender.Abstract;
-using APIMailSender.Model;
+using APIModels.Mail;
+using MailService.Model;
 using System;
 using System.Collections.Generic;
 
