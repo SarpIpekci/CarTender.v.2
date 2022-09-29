@@ -1,0 +1,33 @@
+﻿
+
+.v4_6 {
+    width: 100%;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    font-family: Jockey One;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.v4_5 {
+    color: rgba(0, 0, 0, 1);
+    font-family: Jockey One;
+    font-weight: Regular;
+    font-size: 250%;
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.v4_4 {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

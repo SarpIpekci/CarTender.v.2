@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="~/mystyle/loginstyle.css" rel="stylesheet" />
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="v5_58">
+        <div class="v5_56">
+        </div>
+        <div class="v5_20">
+            <div class="v5_54">
+            </div>
+            <div>
+                <span class="v5_21">Giriş Yap</span>
+            </div>
+            <div>
+                <span class="v5_35">Ikınci el araç ihale sistemine hoş geldiniz.</span>
+            </div>
+            <div>
+                <input type="text" class="v5_36" placeholder="Kullanıcı Adı" />
+            </div>
+            <div>
+                <input id="myInput" type="password" class="v5_38" placeholder="Şifre" />
+                <a type="button" class="v5" onclick="myFunction();"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <input type="button" class="v5_40" value="Giriş" />
+                <a href="ForgotPassword.html" type="button" class="v5_42">Şifrenizi mi unuttunuz?</a>
+            </div>
+            <div>
+            </div>
+            <div>
+                <label class="v5_44">Yeni kullanıcı mısınız?</label>
+                <a href="SignUp.html" type="button" class="v5_46">Kaydol</a>
+            </div>
+            <div> 
+                <img src="~/images/logincar.png" class="v5_48" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
