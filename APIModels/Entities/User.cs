@@ -10,7 +10,8 @@ namespace APIModels.Entities
         public string FirstAndLastName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
         public bool IsCorporate { get; set; }
         public string Information { get; set; }
         public bool IsApproved { get; set; }
