@@ -1,4 +1,4 @@
-﻿using APIMailSender.Model;
+﻿using APIModels.Mail;
 
 namespace APIMailSender.Abstract
 {

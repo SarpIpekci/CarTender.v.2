@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using APIApplication.Abstract;
+using APIModels.DTOS.SignUp;
+using Microsoft.AspNetCore.Mvc;
 
 namespace APICarTender.Controllers
 {
@@ -6,10 +8,16 @@ namespace APICarTender.Controllers
     [ApiController]
     public class SignUpController : ControllerBase
     {
-        [HttpPost]
-        public bool SaveUserPost()
+        ISignUpService _service;
+        public SignUpController(ISignUpService service)
         {
-            return true;
+            _service = service;
+        }
+        [HttpPost]
+        public IActionResult SaveUserPost(RegisterDTO dto)
+        {
+            var result = _service.AddUser(dto);
+            return Ok(result);
         }
     }
 }

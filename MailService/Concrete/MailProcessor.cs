@@ -1,5 +1,5 @@
 ﻿using APIMailSender.Abstract;
-using APIMailSender.Model;
+using APIModels.Mail;
 using System.Net.Mail;
 
 namespace APIMailSender.Concrete
@@ -15,27 +15,27 @@ namespace APIMailSender.Concrete
             ePosta.From = new MailAddress(smtpAyarlayan.GetSenderMailInfo(), smtpAyarlayan.GetSenderTitleInfo());
 
             //mail gonderilecek e-posta adresleri.
-            mailBilgi.GonderilecekEpostaAdresleri.ForEach(x => { ePosta.To.Add(x); });
+            mailBilgi.ReceiveMails.ForEach(x => { ePosta.To.Add(x); });
 
             //Bilgilendirme olarak eklenecek mail adresleri.
-            mailBilgi.CcEpostaAdresleri?.ForEach(x => { ePosta.CC.Add(x); });
+            mailBilgi.CCMails?.ForEach(x => { ePosta.CC.Add(x); });
 
             //Gizli olarak eklenecek mail adresleri.
-            mailBilgi.BccEpostaAdresleri?.ForEach(x => { ePosta.Bcc.Add(x); });
+            mailBilgi.BCCMails?.ForEach(x => { ePosta.Bcc.Add(x); });
 
             //mailin konusu.
-            ePosta.Subject = mailBilgi.Konu;
+            ePosta.Subject = mailBilgi.Topic;
 
             //mail icerigi html olarak gonderilsin.
             ePosta.IsBodyHtml = true;
 
             //mail icerigi.
-            ePosta.Body = mailBilgi.Icerik;
+            ePosta.Body = mailBilgi.Content;
             // ekleri temizledik.
             ePosta.Attachments.Clear();
 
             //mail ek dosyalari eklendi.
-            mailBilgi.EklenecekDosyaAdresleri?.ForEach(x => { ePosta.Attachments.Add(new Attachment(x)); });
+            mailBilgi.AttachementFolders?.ForEach(x => { ePosta.Attachments.Add(new Attachment(x)); });
 
             //Mail gonderiliyor.
             smtpClient.Send(ePosta);
