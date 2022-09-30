@@ -1,7 +1,6 @@
 ﻿using APIModels.DTOS.SignUp;
 using APIModels.Entities;
 using AutoMapper;
-using System;
 
 namespace APIMapping
 {

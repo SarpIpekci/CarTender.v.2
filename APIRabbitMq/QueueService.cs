@@ -1,15 +1,14 @@
 ﻿using APIModels.Mail;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
-using System;
 using System.Text;
 
 namespace APIRabbitMq
 {
     public class QueueService : IQueueService
     {
-        public void CreateQueue(ConnectionFactory connectionFactory,string queue)
-        { 
+        public void CreateQueue(ConnectionFactory connectionFactory, string queue)
+        {
             using (var connection = connectionFactory.CreateConnection())
             using (var model = connection.CreateModel())
             {
@@ -17,7 +16,7 @@ namespace APIRabbitMq
                 model.QueueDeclare(queue, true, false, false, null);
             }
         }
-        public void CreateExchange(ConnectionFactory connectionFactory,string exchange)
+        public void CreateExchange(ConnectionFactory connectionFactory, string exchange)
         {
             using (var connection = connectionFactory.CreateConnection())
             using (var model = connection.CreateModel())
@@ -26,7 +25,7 @@ namespace APIRabbitMq
                 model.ExchangeDeclare(exchange, ExchangeType.Direct);
             }
         }
-        public void CreateBinding(ConnectionFactory connectionFactory,string queue ,string exchange,string routingKey)
+        public void CreateBinding(ConnectionFactory connectionFactory, string queue, string exchange, string routingKey)
         {
             using (var connection = connectionFactory.CreateConnection())
             using (var model = connection.CreateModel())
@@ -35,7 +34,7 @@ namespace APIRabbitMq
                 model.QueueBind(queue, exchange, routingKey);
             }
         }
-        public void Publish(ConnectionFactory connectionFactory,MailInfo mailInfo,string exchange,string routingKey)
+        public void Publish(ConnectionFactory connectionFactory, MailInfo mailInfo, string exchange, string routingKey)
         {
             using (var connection = connectionFactory.CreateConnection())
             using (var model = connection.CreateModel())
@@ -46,7 +45,7 @@ namespace APIRabbitMq
                 string message = JsonConvert.SerializeObject(mailInfo);
                 byte[] messagebuffer = Encoding.Default.GetBytes(message);
 
-                model.BasicPublish(exchange,routingKey,properties,messagebuffer);
+                model.BasicPublish(exchange, routingKey, properties, messagebuffer);
             }
         }
     }
