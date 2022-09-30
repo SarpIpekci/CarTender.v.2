@@ -6,11 +6,7 @@ using APIModels.Mail;
 using APIRabbitMq;
 using AutoMapper;
 using RabbitMQ.Client;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APIApplication.Concrete
 {
@@ -19,7 +15,7 @@ namespace APIApplication.Concrete
         private readonly IMapper _mapper;
         private readonly CarTenderDataContext _context;
         private readonly IQueueService _queueService;
-        public SignUpService(IMapper mapper,CarTenderDataContext context,IQueueService queueService)
+        public SignUpService(IMapper mapper, CarTenderDataContext context, IQueueService queueService)
         {
             _mapper = mapper;
             _context = context;
@@ -30,7 +26,7 @@ namespace APIApplication.Concrete
             var user = _mapper.Map<User>(dto);
             _context.User.Add(user);
             var result = _context.SaveChanges();
-            if(result == 0)
+            if (result == 0)
             {
                 return false;
             }
@@ -56,7 +52,7 @@ namespace APIApplication.Concrete
                 _queueService.CreateQueue(connectionFactory, queue);
                 _queueService.CreateExchange(connectionFactory, exchange);
                 _queueService.CreateBinding(connectionFactory, queue, exchange, routingKey);
-                _queueService.Publish(connectionFactory,mailInfo,exchange, routingKey);
+                _queueService.Publish(connectionFactory, mailInfo, exchange, routingKey);
             }
             return true;
         }
