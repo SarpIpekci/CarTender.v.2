@@ -17,11 +17,11 @@ namespace APIModels.Entities
         public bool IsEmailVerificated { get; set; } = false;
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
-        public int? ApprovedBy { get; set; }
+        public Guid? ApprovedBy { get; set; }
         [ForeignKey("ApprovedBy")]
         public User Approver { get; set; }
 
-        public int RoleID { get; set; }
+        public Guid RoleID { get; set; }
         public Role Role { get; set; }
 
         public List<UserCar> UserCars { get; set; }

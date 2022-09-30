@@ -12,20 +12,20 @@ namespace APIModels.Entities
         public DateTime? FinishedDate { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public DateTime? ModifiedDate { get; set; }
-        public int? ApprovedBy { get; set; }
+        public Guid? ApprovedBy { get; set; }
 
         [ForeignKey("ApprovedBy")]
         public User Approver { get; set; }
-        public int? FinishedBy { get; set; }
+        public Guid? FinishedBy { get; set; }
 
         [ForeignKey("FinishedBy")]
         public User Finisher { get; set; }
 
-        public int CreatedBy { get; set; }
+        public Guid CreatedBy { get; set; }
         [ForeignKey("CreatedBy")]
         public User Adder { get; set; }
 
-        public int? ModifiedBy { get; set; }
+        public Guid? ModifiedBy { get; set; }
         [ForeignKey("ModifiedBy")]
         public User Modifier { get; set; }
 

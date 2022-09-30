@@ -1,12 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace APIModels.Entities
 {
     public class CarModification
     {
-        public int ModificationID { get; set; }
+        public Guid ModificationID { get; set; }
         public Modification Modification { get; set; }
-        public int CarID { get; set; }
+        public Guid CarID { get; set; }
         public Car Car { get; set; }
         public bool IsActive { get; set; }
         [Timestamp]

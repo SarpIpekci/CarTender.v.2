@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIModels.Entities
@@ -13,7 +14,7 @@ namespace APIModels.Entities
         //[Key, Column(Order = 2)]
         //public int DistrictID { get; set; }
         //[Key, Column(Order = 3)]
-        public int NeighborhoodID { get; set; }
+        public Guid NeighborhoodID { get; set; }
         //public bool IsActive { get; set; }
         //[Timestamp]
         //public byte[] Version { get; set; }
