@@ -5,6 +5,6 @@ namespace APIModels.Entities
     public interface IModifiedEntity
     {
         public DateTime? ModifiedDate { get; set; }
-        public int? ModifiedBy { get; set; }
+        public Guid? ModifiedBy { get; set; }
     }
 }

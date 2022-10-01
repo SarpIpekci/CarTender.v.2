@@ -9,8 +9,8 @@ namespace APIModels.Entities.BaseEntities
         [Timestamp]
         public byte[] Version { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public int CreatedBy { get; set; } = 1;
+        public Guid CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public int? ModifiedBy { get; set; }
+        public Guid? ModifiedBy { get; set; }
     }
 }

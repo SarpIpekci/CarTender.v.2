@@ -21,16 +21,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.AddressInformation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("NeighborhoodID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("NeighborhoodID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -46,16 +45,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Advert", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -92,16 +90,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.AdvertStatusHistory", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AdvertID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AdvertID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -112,14 +109,14 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("StatuID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("StatuID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -141,16 +138,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Authorization", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AutherizationPath")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -158,8 +154,8 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -176,19 +172,18 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.BidCar", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BidID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BidID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -199,8 +194,8 @@ namespace APIDataAccess.Migrations
                     b.Property<decimal>("MinimumPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -229,19 +224,18 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.BidCorporateUser", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BidID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BidID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("CorporateID")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("CorporateID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -249,14 +243,14 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -280,25 +274,24 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.BidInformation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("ApprovedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ApprovedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("BidName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("FinishedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("FinishedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("FinishedDate")
                         .HasColumnType("datetime2");
@@ -312,14 +305,14 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsCorporate")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -343,11 +336,11 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.BidOfferDetail", b =>
                 {
-                    b.Property<int>("BidCarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BidCarID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BidUserOfferID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BidUserOfferID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -369,16 +362,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.BidStatusHistory", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BidID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BidID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -389,14 +381,14 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("StatuID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("StatuID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -418,16 +410,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.BidUserOffer", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BidCorporateUserID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BidCorporateUserID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -452,16 +443,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Car", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Brand")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -475,8 +465,8 @@ namespace APIDataAccess.Migrations
                     b.Property<string>("Model")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -503,13 +493,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CarBuyerInformation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -523,8 +512,8 @@ namespace APIDataAccess.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -542,10 +531,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CarDetail", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CarDetailName")
                         .HasColumnType("nvarchar(max)");
@@ -565,13 +553,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CarDetailValue", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarDetailID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarDetailID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CarDetailValueName")
                         .HasColumnType("nvarchar(max)");
@@ -593,13 +580,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CarImage", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
@@ -621,11 +607,11 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CarModification", b =>
                 {
-                    b.Property<int>("ModificationID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ModificationID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -644,19 +630,18 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CarStatusHistory", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarStatuID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarStatuID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -667,8 +652,8 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -693,11 +678,11 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CarValue", b =>
                 {
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarValueID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarValueID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -716,10 +701,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.City", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CityName")
                         .HasColumnType("nvarchar(max)");
@@ -739,13 +723,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Corporate", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AddressInformationID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AddressInformationID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CorporateName")
                         .HasColumnType("nvarchar(max)");
@@ -753,8 +736,8 @@ namespace APIDataAccess.Migrations
                     b.Property<string>("CorporatePhone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -778,10 +761,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CorporateRole", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -801,16 +783,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CorporateStatusHistory", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CorporateID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CorporateID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -821,14 +802,14 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("StatuID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("StatuID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -850,14 +831,14 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.CorporateUser", b =>
                 {
-                    b.Property<int>("CorporateID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CorporateID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CorporateRoleID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CorporateRoleID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -878,10 +859,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.District", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("DistrictName")
                         .HasColumnType("nvarchar(max)");
@@ -889,8 +869,8 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("TownID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("TownID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -906,13 +886,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Expertise", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AddressInformationID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AddressInformationID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ExpertiseName")
                         .HasColumnType("nvarchar(max)");
@@ -940,10 +919,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Message", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -951,11 +929,11 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MessageContentID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("MessageContentID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -973,10 +951,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.MessageContent", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ContentText")
                         .HasColumnType("nvarchar(max)");
@@ -996,10 +973,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Modification", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1019,13 +995,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Neighborhood", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("DistrictID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("DistrictID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1047,10 +1022,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Package", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("BidCount")
                         .HasColumnType("int");
@@ -1073,11 +1047,11 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.PackageCorporate", b =>
                 {
-                    b.Property<int>("PackageID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("PackageID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CorporateID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CorporateID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1097,10 +1071,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.PageAuthorization", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1120,10 +1093,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Role", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1143,14 +1115,14 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.RoleAuthorization", b =>
                 {
-                    b.Property<int>("RoleID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RoleID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AuthorizationID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AuthorizationID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("PageAuthorizationID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("PageAuthorizationID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1171,10 +1143,9 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Status", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
@@ -1197,13 +1168,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.Town", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CityID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CityID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1225,13 +1195,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.TramerComponent", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -1256,16 +1225,15 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.TramerInformation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -1273,8 +1241,8 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -1301,16 +1269,14 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.TramerInformationComponent", b =>
                 {
-                    b.Property<int>("TramerInformationID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("TramerInformationID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("TramerComponentID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("TramerComponentID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                    b.Property<Guid>("ID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1329,13 +1295,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.TramerStatusHistory", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -1346,23 +1311,23 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("StatuID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("StatuID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("TramerInformationComponentID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("TramerInformationComponentID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("TramerInformationComponentTramerComponentID")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("TramerInformationComponentTramerComponentID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("TramerInformationComponentTramerInformationID")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("TramerInformationComponentTramerInformationID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Version")
                         .IsConcurrencyToken()
@@ -1384,13 +1349,12 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.User", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("ApprovedBy")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ApprovedBy")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -1416,14 +1380,17 @@ namespace APIDataAccess.Migrations
                     b.Property<bool>("IsEmailVerificated")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RoleID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
@@ -1444,11 +1411,11 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.UserCar", b =>
                 {
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -1467,11 +1434,11 @@ namespace APIDataAccess.Migrations
 
             modelBuilder.Entity("APIModels.Entities.UserFavoriteCar", b =>
                 {
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CarID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");

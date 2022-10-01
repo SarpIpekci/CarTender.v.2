@@ -9,6 +9,6 @@ namespace APIModels.Entities.BaseEntities
         [Timestamp]
         public byte[] Version { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public int? ModifiedBy { get; set; }
+        public Guid? ModifiedBy { get; set; }
     }
 }

@@ -8,8 +8,8 @@ namespace APIModels.Entities
         public string AutherizationPath { get; set; }
         public List<RoleAuthorization> RoleAutherizations { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public int CreatedBy { get; set; } = 1;
+        public Guid CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public int? ModifiedBy { get; set; }
+        public Guid? ModifiedBy { get; set; }
     }
 }

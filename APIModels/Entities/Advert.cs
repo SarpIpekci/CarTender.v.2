@@ -9,10 +9,10 @@ namespace APIModels.Entities
         public decimal PrePrice { get; set; }
         public decimal Price { get; set; }
         public string Information { get; set; }
-        public int CarID { get; set; }
+        public Guid CarID { get; set; }
         public Car Car { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public int CreatedBy { get; set; }
+        public Guid CreatedBy { get; set; }
         [ForeignKey("CreatedBy")]
         public User Adder { get; set; }
     }

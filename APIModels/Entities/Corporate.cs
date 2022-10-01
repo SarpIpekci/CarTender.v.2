@@ -8,10 +8,10 @@ namespace APIModels.Entities
     {
         public string CorporateName { get; set; }
         public string CorporatePhone { get; set; }
-        public int AddressInformationID { get; set; }
+        public Guid AddressInformationID { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
-        public int CreatedBy { get; set; }
+        public Guid CreatedBy { get; set; }
 
         [ForeignKey("CreatedBy")]
         public User Adder { get; set; }

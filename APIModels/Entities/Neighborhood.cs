@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIModels.Entities
 {
     public class Neighborhood : BaseEntity
     {
-        public int DistrictID { get; set; }
+        public Guid DistrictID { get; set; }
         [ForeignKey("DistrictID")]
         public District District { get; set; }
         public string NeighborhoodName { get; set; }

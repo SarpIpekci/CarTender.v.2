@@ -7,19 +7,19 @@ namespace APIModels.Entities
     {
         public string Information { get; set; }
 
-        public int CorporateID { get; set; }
+        public Guid CorporateID { get; set; }
         public Corporate Corporate { get; set; }
 
-        public int StatuID { get; set; }
+        public Guid StatuID { get; set; }
         [ForeignKey("StatuID")]
         public Status Status { get; set; }
 
-        public int CreatedBy { get; set; }
+        public Guid CreatedBy { get; set; }
 
         [ForeignKey("CreatedBy")]
         public User Adder { get; set; }
 
-        public int? ModifiedBy { get; set; }
+        public Guid? ModifiedBy { get; set; }
 
         [ForeignKey("ModifiedBy")]
         public User Modifier { get; set; }
